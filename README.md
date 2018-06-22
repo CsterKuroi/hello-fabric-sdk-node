@@ -11,9 +11,9 @@ sudo yum install gcc-c++ make
 node -v
 npm -v
 ```
-node runtime LTS version 8.9.0 or higher, up to 9.0 ( Node v9.0+ is not supported )
+*node runtime LTS version 8.9.0 or higher, up to 9.0 ( Node v9.0+ is not supported )*
 
-npm tool version 5.5.1 or higher 
+*npm tool version 5.5.1 or higher *
 
 2. fabric-sdk-node
 ```
@@ -24,14 +24,14 @@ npm install
 ```
 
 3. run e2e
-Two terminal
+*Two terminal*
 
-terminal A
+*terminal A*
 ``` 
 cd test/fixtures
 docker-compose up
 ```
-terminal B
+*terminal B*
 ``` 
 node test/integration/e2e.js
 ```
