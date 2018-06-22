@@ -26,11 +26,13 @@ npm install
 3. run e2e
 Two terminal
 
-``` terminal A
+terminal A
+``` 
 cd test/fixtures
 docker-compose up
-
-``` terminal B
+```
+terminal B
+``` 
 node test/integration/e2e.js
 ```
 
