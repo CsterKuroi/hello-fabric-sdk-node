@@ -11,9 +11,8 @@ sudo yum install gcc-c++ make
 node -v
 npm -v
 ```
-*node runtime LTS version 8.9.0 or higher, up to 9.0 ( Node v9.0+ is not supported )*
-
-*npm tool version 5.5.1 or higher *
+>node runtime LTS version 8.9.0 or higher, up to 9.0 ( Node v9.0+ is not supported )  
+>npm tool version 5.5.1 or higher  
 
 2. fabric-sdk-node
 ```
