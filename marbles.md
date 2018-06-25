@@ -2,6 +2,7 @@
 
 ### 1. Download Marbles
 We need to download marbles to your local system.
+
 	```
 	git clone https://github.com/IBM-Blockchain/marbles.git --depth 1
 	cd marbles
