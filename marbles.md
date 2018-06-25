@@ -2,12 +2,14 @@
 
 ### 1. Download Marbles
 We need to download marbles to your local system.
+- Run the following command:
 
 	```
 	git clone https://github.com/IBM-Blockchain/marbles.git --depth 1
 	cd marbles
 	```
 
+- Great I'll meet you at step 2.
 <a name="getnetwork"></a>
 
 ### 2. Get a Network
