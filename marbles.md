@@ -35,7 +35,7 @@ We need to download marbles to your local system.
 
 1. Open up your favorite browser and browse to [http://localhost:3001](http://localhost:3001) 
 
-
+2. modify app.js `host` to `0.0.0.0`
 
 > BTW：if you run into the issue like 
 > 
