@@ -22,9 +22,7 @@ npm install
 *** npm rebuild
 ```
 
-3. run e2e
-
-*Two terminal*
+3. run e2e on two terminals
 
 *terminal A*
 ``` 
