@@ -23,6 +23,7 @@ npm install
 ```
 
 3. run e2e
+
 *Two terminal*
 
 *terminal A*
