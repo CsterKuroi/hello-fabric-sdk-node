@@ -13,29 +13,122 @@ We need to download marbles to your local system.
 <a name="getnetwork"></a>
 
 ### 2. Get a Network
+```
+cd ~/fabric-samples/fabcar
+./startFabric.sh
+sudo npm install
+node enrollAdmin.js
+node registerUser.js
+node query.js
 
-- **Option :** :lollipop: Use a locally hosted Hyperledger Fabric Network - [instructions](./docs/use_local_hyperledger.md)
-
-<a name="installchaincode"></a>
+cp hfc-key-store/* ~/.hfc-key-store
+```
 
 ### 3. Install and Instantiate Chaincode
 
-- **Option :** :lollipop: Install and instantiate chaincode with the SDK locally - [instructions](./docs/install_chaincode_locally.md)
+```
+cd ~/marbles
+npm install
+vim config/connection_profile_local.json
+```
+```
+{
+	"name": "Docker Compose Network",
+	"x-networkId": "not-important",
+	"x-type": "hlfv1",
+	"description": "Connection Profile for an Hyperledger Fabric network on a local machine",
+	"version": "1.0.0",
+	"client": {
+		"organization": "Org1MSP",
+		"credentialStore": {
+			"path": "/$HOME/.hfc-key-store"
+		}
+	},
+	"channels": {
+		"mychannel": {
+			"orderers": [
+				"fabric-orderer"
+			],
+			"peers": {
+				"fabric-peer-org1": {
+					"x-chaincode": {}
+				}
+			},
+			"chaincodes": [
+				"marbles:v4"
+			],
+			"x-blockDelay": 10000
+		}
+	},
+	"organizations": {
+		"Org1MSP": {
+			"mspid": "Org1MSP",
+			"peers": [
+				"fabric-peer-org1"
+			],
+			"certificateAuthorities": [
+				"fabric-ca"
+			],
+			"x-adminCert": {
+				"path": "/$HOME/fabric-samples/basic-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/admincerts/Admin@org1.example.com-cert.pem"
+			},
+			"x-adminKeyStore": {
+				"path": "/$HOME/fabric-samples/basic-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/"
+			}
+		}
+	},
+	"orderers": {
+		"fabric-orderer": {
+			"url": "grpc://localhost:7050"
+		}
+	},
+	"peers": {
+		"fabric-peer-org1": {
+			"url": "grpc://localhost:7051",
+			"eventUrl": "grpc://localhost:7053"
+		}
+	},
+	"certificateAuthorities": {
+		"fabric-ca": {
+			"url": "http://localhost:7054",
+			"httpOptions": {
+				"verify": true
+			},
+			"registrar": [
+				{
+					"enrollId": "admin",
+					"enrollSecret": "adminpw"
+				}
+			],
+			"caName": null
+		}
+	}
+}
 
-<a name="hostmarbles"></a>
+```
+
+```
+cd ./scripts
+node install_chaincode.js
+node instantiate_chaincode.js
+```
 
 ### 4. Host Marbles
-- **Option :** :lollipop: Host marbles locally - [instructions](./docs/host_marbles_locally.md)
 
-***
+```
+npm install gulp -g
+npm install
 
-<a name="use"></a>
+gulp marbles_local
+```
 
-# Use Marbles
+### 5.Use Marbles
 
 1. Open up your favorite browser and browse to [http://localhost:3001](http://localhost:3001) 
 
 2. modify app.js `host` to `0.0.0.0`
+
+
 
 > BTW：if you run into the issue like 
 > 
