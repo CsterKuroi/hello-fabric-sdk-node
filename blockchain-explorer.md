@@ -38,7 +38,7 @@ host    all             all             ::1/128                 trust
 then
 
 ```
-systemctl start postgresql-9.6
+systemctl restart postgresql-9.6
 ```
 
 ## Database Setup
