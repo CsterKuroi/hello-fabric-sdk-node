@@ -114,3 +114,10 @@ cd /etc/blockchain-explorer
 ./start.sh
 ```
 - Launch the URL http://localhost:8080 on a browser.
+
+
+## troubleshooting
+
+```
+DROP INDEX IF EXISTS transaction_chaincode_proposal_input_idx;
+```
