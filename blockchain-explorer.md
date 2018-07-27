@@ -139,5 +139,5 @@ DROP INDEX IF EXISTS transaction_chaincode_proposal_input_idx;
 \d
 \q
 
-./start
+./start.sh
 ```
