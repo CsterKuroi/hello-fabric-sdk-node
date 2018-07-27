@@ -121,3 +121,23 @@ cd /etc/blockchain-explorer
 ```
 DROP INDEX IF EXISTS transaction_chaincode_proposal_input_idx;
 ```
+
+
+## Restart
+
+```
+cd /etc/blocvkchain-explorer
+./stop.sh
+
+sudo -u postgres psql
+
+\i app/persistence/postgreSQL/db/explorerpg.sql
+\i app/persistence/postgreSQL/db/updatepg.sql
+DROP INDEX IF EXISTS transaction_chaincode_proposal_input_idx;
+
+\l
+\d
+\q
+
+./start
+```
