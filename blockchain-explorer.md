@@ -130,7 +130,7 @@ cd /etc/blocvkchain-explorer
 ./stop.sh
 rm -rf logs
 
-sudo -u postgres psql
+psql postgres://hppoc:password@127.0.0.1:5432/fabricexplorer
 
 \i app/persistence/postgreSQL/db/explorerpg.sql
 \i app/persistence/postgreSQL/db/updatepg.sql
