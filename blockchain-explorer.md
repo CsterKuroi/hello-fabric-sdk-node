@@ -128,12 +128,20 @@ DROP INDEX IF EXISTS transaction_chaincode_proposal_input_idx;
 ```
 cd /etc/blocvkchain-explorer
 ./stop.sh
+rm -rf logs
 
 sudo -u postgres psql
 
 \i app/persistence/postgreSQL/db/explorerpg.sql
 \i app/persistence/postgreSQL/db/updatepg.sql
+
 DROP INDEX IF EXISTS transaction_chaincode_proposal_input_idx;
+
+insert into peer (id,requests,server_hostname,genesis_block_hash) VALUES (2,'grpcs://172.169.222.157:7051','peer1.org1.example.com','');
+
+insert into peer (id,requests,server_hostname,genesis_block_hash) VALUES (3,'grpcs://172.169.222.161:7051','peer0.org2.example.com','');
+
+insert into peer (id,requests,server_hostname,genesis_block_hash) VALUES (4,'grpcs://172.169.222.162:7051','peer1.org2.example.com','');
 
 \l
 \d
